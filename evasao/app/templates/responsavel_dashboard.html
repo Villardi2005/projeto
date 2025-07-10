@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+{% load static %}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel do Responsável - Avança+</title>
+  <link rel="stylesheet" href="{% static 'responsavel.css' %}">
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="logo">Avança+</div>
+      <ul class="menu">
+        <li><a href="{% url 'responsavel_dashboard' %}">Painel</a></li>
+        <li><a href="{% url 'responsavel_filhos' %}">Meus Filhos</a></li>
+        <li><a href="{% url 'responsavel_mensagens' %}">Mensagens</a></li>
+      </ul>
+    </aside>
+
+    <main class="main-content">
+      <div class="top-bar">
+        <p>Bem-vindo(a)!</p>
+        <a href="{% url 'index' %}" class="btn-sair">Sair</a>
+      </div>
+
+      <section class="resumo">
+        <h2>Resumo dos Filhos</h2>
+        <div class="cards">
+          <div class="card">
+            <p class="label">João - 1º A</p>
+            <p class="valor">Nota: 7.8 | Frequência: 92%</p>
+          </div>
+
+          <div class="card">
+            <p class="label">Maria - 2º B</p>
+            <p class="valor">Nota: 8.5 | Frequência: 96%</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="avisos">
+        <h3>Mensagens Recentes</h3>
+        <ul class="mensagens">
+          <li>Reunião de pais agendada para 12/07</li>
+          <li>Maria foi destaque da semana!</li>
+        </ul>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ajuda - Avança+</title>
+  <link rel="stylesheet" href="{% static 'responsavel.css' %}" />
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar" role="navigation" aria-label="Menu principal">
+      <div class="logo">Avança+</div>
+      <ul class="menu">
+        <li><a href="{% url 'responsavel_dashboard' %}">Painel</a></li>
+        <li><a href="{% url 'responsavel_filhos' %}">Meus Filhos</a></li>
+        <li><a href="{% url 'responsavel_mensagens' %}">Mensagens</a></li>
+        <li><a href="{% url 'responsavel_ajuda' %}" class="active">Ajuda</a></li>
+      </ul>
+    </aside>
+
+    <main class="main-content" role="main">
+      <div class="top-bar">
+        <h1>Central de Ajuda</h1>
+        <a href="{% url 'index' %}" class="btn-sair">Sair</a>
+      </div>
+
+      <section class="ajuda">
+        <h2>Precisa de ajuda?</h2>
+        <p>Estamos aqui para apoiar você! Escolha uma opção abaixo ou envie sua dúvida.</p>
+
+        <ul class="ajuda-opcoes">
+          <li tabindex="0">Dúvidas sobre desempenho escolar</li>
+          <li tabindex="0">Como acessar boletins</li>
+          <li tabindex="0">Contato com professores</li>
+          <li tabindex="0">Problemas com login ou senha</li>
+        </ul>
+
+        <form class="ajuda-form" method="post">
+          {% csrf_token %}
+          <label for="duvida" class="sr-only">Descreva sua dúvida</label>
+          <textarea id="duvida" name="duvida" placeholder="Descreva sua dúvida..." rows="5" required></textarea>
+          <button type="submit" class="btn-azul">Enviar</button>
+        </form>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

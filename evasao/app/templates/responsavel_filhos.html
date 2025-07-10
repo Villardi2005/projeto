@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+{% load static %}
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meus Filhos - Avança+</title>
+  <link rel="stylesheet" href="{% static 'responsavel.css' %}">
+  <script>
+    function toggleHistorico(id) {
+      const div = document.getElementById(id);
+      div.style.display = div.style.display === "none" ? "block" : "none";
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="logo">Avança+</div>
+      <ul class="menu">
+        <li><a href="{% url 'responsavel_dashboard' %}">Painel</a></li>
+        <li><a href="{% url 'responsavel_filhos' %}">Meus Filhos</a></li>
+        <li><a href="{% url 'responsavel_mensagens' %}">Mensagens</a></li>
+      </ul>
+    </aside>
+
+    <main class="main-content">
+      <div class="top-bar">
+        <p>Meus Filhos</p>
+        <a href="{% url 'index' %}" class="btn-sair">Sair</a>
+      </div>
+
+      <section class="lista-filhos">
+        <h2>Detalhes dos Filhos</h2>
+        <div class="cards">
+
+          <!-- João -->
+          <div class="card">
+            <p class="label">João - 1º A</p>
+            <p class="valor">Notas: 7.8 | Frequência: 92%</p>
+            <button class="btn-azul" onclick="toggleHistorico('joao')">Ver Histórico</button>
+            <div id="joao" style="display: none; margin-top: 15px;">
+              <ul>
+                <li>Matemática: 8.0</li>
+                <li>Português: 7.5</li>
+                <li>História: 7.2</li>
+                <li>Presenças: 92%</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Maria -->
+          <div class="card">
+            <p class="label">Maria - 2º B</p>
+            <p class="valor">Notas: 8.5 | Frequência: 96%</p>
+            <button class="btn-azul" onclick="toggleHistorico('maria')">Ver Histórico</button>
+            <div id="maria" style="display: none; margin-top: 15px;">
+              <ul>
+                <li>Matemática: 9.0</li>
+                <li>Português: 8.2</li>
+                <li>História: 8.4</li>
+                <li>Presenças: 96%</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

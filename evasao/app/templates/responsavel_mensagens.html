@@ -1,0 +1,128 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mensagens - Avança+</title>
+  <link rel="stylesheet" href="{% static 'responsavel_mensagens.css' %}" />
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="logo">Avança+</div>
+      <ul class="menu">
+        <li><a href="{% url 'responsavel_dashboard' %}">Painel</a></li>
+        <li><a href="{% url 'responsavel_filhos' %}">Meus Filhos</a></li>
+        <li><a href="{% url 'responsavel_mensagens' %}" class="active">Mensagens</a></li>
+      </ul>
+    </aside>
+
+    <main class="main-content">
+      <div class="top-bar">
+        <p>Mensagens</p>
+        <a href="{% url 'index' %}" class="btn-sair">Sair</a>
+      </div>
+
+      <section class="mensagens">
+        <div class="lista-filhos">
+          <h3>Conversas</h3>
+          <ul>
+            <li class="filho active" data-filho="joao">João Oliveira</li>
+            <li class="filho" data-filho="maria">Maria Oliveira</li>
+            <li class="filho" data-filho="pedro">Pedro Oliveira</li>
+          </ul>
+        </div>
+
+        <div class="conversa ativa" data-filho="joao">
+          <div class="cabecalho-conversa">
+            <h3>João Oliveira</h3>
+            <span>3º Ano - Turma A</span>
+          </div>
+          <div class="historico">
+            <div class="message escola">
+              <p>Prezada Sra. Oliveira, lembramos da reunião dia 12/07.</p>
+              <span class="time">08:30</span>
+            </div>
+            <div class="message responsavel">
+              <p>Obrigada pelo aviso, estarei presente.</p>
+              <span class="time">08:45</span>
+            </div>
+          </div>
+          <form class="chat-form" method="post">
+            {% csrf_token %}
+            <input type="text" name="mensagem" placeholder="Digite sua mensagem..." required />
+            <button type="submit">Enviar</button>
+          </form>
+        </div>
+
+        <div class="conversa" data-filho="maria">
+          <div class="cabecalho-conversa">
+            <h3>Maria Oliveira</h3>
+            <span>1º Ano - Turma B</span>
+          </div>
+          <div class="historico">
+            <div class="message escola">
+              <p>Olá, Sra. Oliveira, a tarefa de casa está disponível no portal.</p>
+              <span class="time">09:15</span>
+            </div>
+            <div class="message responsavel">
+              <p>Obrigada pela informação!</p>
+              <span class="time">09:20</span>
+            </div>
+          </div>
+          <form class="chat-form" method="post">
+            {% csrf_token %}
+            <input type="text" name="mensagem" placeholder="Digite sua mensagem..." required />
+            <button type="submit">Enviar</button>
+          </form>
+        </div>
+
+        <div class="conversa" data-filho="pedro">
+          <div class="cabecalho-conversa">
+            <h3>Pedro Oliveira</h3>
+            <span>5º Ano - Turma C</span>
+          </div>
+          <div class="historico">
+            <div class="message escola">
+              <p>Lembrete: reunião de pais próxima segunda-feira.</p>
+              <span class="time">10:00</span>
+            </div>
+            <div class="message responsavel">
+              <p>Entendido, obrigado pelo aviso.</p>
+              <span class="time">10:05</span>
+            </div>
+          </div>
+          <form class="chat-form" method="post">
+            {% csrf_token %}
+            <input type="text" name="mensagem" placeholder="Digite sua mensagem..." required />
+            <button type="submit">Enviar</button>
+          </form>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const filhos = document.querySelectorAll('.lista-filhos li.filho');
+    const conversas = document.querySelectorAll('.conversa');
+
+    filhos.forEach(filho => {
+      filho.addEventListener('click', () => {
+        filhos.forEach(f => f.classList.remove('active'));
+        filho.classList.add('active');
+
+        const filhoSelecionado = filho.getAttribute('data-filho');
+
+        conversas.forEach(conversa => {
+          if(conversa.getAttribute('data-filho') === filhoSelecionado) {
+            conversa.classList.add('ativa');
+          } else {
+            conversa.classList.remove('ativa');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

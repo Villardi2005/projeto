@@ -36,8 +36,18 @@ def professor_relatorios(request):
 def professor_mensagens(request):
     return render(request,'professor_mensagens.html')
 
-def painel_responsavel(request):
-    return render(request, 'responsavel.html')
+def responsavel_dashboard(request):
+    return render(request, 'responsavel_dashboard.html')
+
+def responsavel_ajuda(request):
+    return render(request, 'responsavel_ajuda.html')
+
+def responsavel_filhos(request):
+    return render(request,'responsavel_filhos.html')
+
+def responsavel_mensagens(request):
+    return render(request, 'responsavel_mensagens.html')
+
 
 def login_view(request):
     if request.method == 'POST':
