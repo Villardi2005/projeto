@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Saldo Acumulado - Avança+</title>
+  <link rel="stylesheet" href="{% static 'metas.css' %}" />
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="logo">Avança+</div>
+      <ul class="menu">
+        <li><a href="{% url 'metas' %}">Minhas Metas</a></li>
+        <li class="active">Saldo Acumulado</li>
+        <li><a href="{% url 'recompensas' %}">Recompensas</a></li>
+        <li><a href="{% url 'chat' %}">Chat com Professores</a></li>
+      </ul>
+    </aside>
+
+    <main class="main-content">
+      <div class="top-bar">
+        <button class="btn-ajuda">Ajuda</button>
+      </div>
+
+      <section class="saldo">
+        <h2>Saldo Acumulado</h2>
+
+        <div class="cards">
+          <div class="card">
+            <p class="label">Saldo Atual</p>
+            <p class="valor">R$ 1.250,00</p>
+          </div>
+
+          <div class="card">
+            <p class="label">Total Recebido</p>
+            <p class="valor">R$ 3.500,00</p>
+          </div>
+
+          <div class="card">
+            <p class="label">Próximo Crédito</p>
+            <p class="valor">R$ 250,00</p>
+          </div>
+        </div>
+
+        <div class="historico-pagamentos">
+          <h3>Histórico de Pagamentos</h3>
+          <ul>
+            <li>01/06/2025 - R$ 500,00</li>
+            <li>01/07/2025 - R$ 750,00</li>
+            <li>01/08/2025 - R$ 1.000,00</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

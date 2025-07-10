@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Recompensas - Avança+</title>
+  <link rel="stylesheet" href="{% static 'metas.css' %}" />
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="logo">Avança+</div>
+      <ul class="menu">
+        <li><a href="{% url 'metas' %}">Minhas Metas</a></li>
+        <li><a href="{% url 'saldoacumulado' %}">Saldo Acumulado</a></li>
+        <li class="active">Recompensas</li>
+        <li><a href="{% url 'chat' %}">Chat com Professores</a></li>
+      </ul>
+    </aside>
+
+    <main class="main-content">
+      <div class="top-bar">
+        <button class="btn-ajuda">Ajuda</button>
+      </div>
+
+      <section class="recompensas">
+        <h2>Recompensas Disponíveis</h2>
+
+        <div class="cards">
+          <div class="card">
+            <p class="label">Voucher Livraria</p>
+            <p class="valor">R$ 50,00</p>
+            <button class="btn-detalhes">Resgatar</button>
+          </div>
+
+          <div class="card">
+            <p class="label">Cupom Café</p>
+            <p class="valor">R$ 20,00</p>
+            <button class="btn-detalhes">Resgatar</button>
+          </div>
+
+          <div class="card">
+            <p class="label">Acesso Premium</p>
+            <p class="valor">7 dias grátis</p>
+            <button class="btn-detalhes">Ativar</button>
+          </div>
+        </div>
+
+        <div class="historico-resgates">
+          <h3>Histórico de Resgates</h3>
+          <ul>
+            <li>Voucher Livraria - 01/06/2025</li>
+            <li>Cupom Café - 15/06/2025</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

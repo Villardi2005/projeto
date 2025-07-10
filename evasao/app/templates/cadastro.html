@@ -1,21 +1,29 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8">
     <title>Cadastro - Avança+</title>
-    <link rel="stylesheet" href="static/cadastro.css" />
+    <link rel="stylesheet" href="{% static 'cadastro.css' %}">
 </head>
 <body>
-    <div class="header">
-        <img src="static/logo.png" alt="Logo Avança+" class="logo" />
-        <h1>Avança+</h1>
-    </div>
+    <div class="form-container">
+        <img src="{% static 'logo.png' %}" alt="Logo Avança+" class="logo">
+        <h1 class="titulo">Avança+</h1>
 
-    <div class="opcoes">
-        <a href="{% url 'cadastroaluno' %}" class="botao">Você é Aluno(a)?</a>
-        <a href="{% url 'cadastroprofessor' %}" class="botao">Você é Professor(a)?</a>
-        <a href="{% url 'cadastroresponsavel' %}" class="botao">Você é Responsável?</a>
+        <form class="formulario">
+            <select name="tipo_usuario" class="campo">
+                <option value="aluno">Aluno</option>
+                <option value="professor">Professor</option>
+                <option value="responsavel">Responsável</option>
+            </select>
+
+            <input type="text" name="cpf_email" placeholder="CPF ou email" class="campo" required>
+            <input type="text" name="senha" placeholder="Senha" class="campo" required>
+
+            <button type="submit" class="botao">Registrar</button>
+            <p class="info">Será necessário validar seu e-mail e/ou CPF</p>
+        </form>
     </div>
 </body>
 </html>

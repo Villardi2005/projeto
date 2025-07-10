@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "app",
+    "app",  # sua aplicação
 ]
 
 MIDDLEWARE = [
@@ -112,10 +112,16 @@ USE_I18N = True
 USE_TZ = True
 
 
+# ✅ Permitir POST de http://localhost:8002
+CSRF_TRUSTED_ORIGINS = ['https://localhost:8002']
+
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = "static/"
+STATICFILES_DIRS = [BASE_DIR / 'static']
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
