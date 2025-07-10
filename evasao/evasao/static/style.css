@@ -1,0 +1,158 @@
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f3f0; 
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  background-color: #ffffff;
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.top-image {
+  width: 80px;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+h1 {
+  color: #14532d; 
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+label {
+  text-align: left;
+  font-weight: bold;
+  font-size: 14px;
+  color: #1b4332; 
+}
+
+input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border-color 0.3s;
+}
+
+input:focus {
+  border-color: #14532d;
+  outline: none;
+}
+
+button {
+  padding: 10px;
+  background-color: #d4af37; /* dourado */
+  color: #1b1b1b;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #b8860b; 
+}
+
+.esqueci-senha {
+  font-size: 12px;
+  color: #b8860b;
+  margin-top: 10px;
+  text-decoration: none;
+}
+
+.esqueci-senha:hover {
+  text-decoration: underline;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+
+li {
+  color: red;
+  font-size: 14px;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom right, #006400, #daa520);
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  width: 300px;
+  text-align: center;
+}
+
+.login-container h2 {
+  color: #006400;
+  margin-bottom: 20px;
+}
+
+.login-container input[type="text"],
+.login-container input[type="password"] {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.login-container button {
+  background-color: #daa520;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.login-container button:hover {
+  background-color: #b8860b;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: #f0f0f0;
+}
+
+h1 {
+  color: #333;
+}
