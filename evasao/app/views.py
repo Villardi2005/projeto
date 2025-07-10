@@ -24,8 +24,17 @@ def chat(request):
 def recompensas(request):
     return render(request, 'recompensas.html')
 
-def professor(request):
+def painel_professor(request):
     return render(request, 'professor.html')
+
+def professor_turmas(request):
+    return render(request,'professor_turmas.html')
+
+def professor_relatorios(request):
+    return render(request,'professor_relatorios.html')
+
+def professor_mensagens(request):
+    return render(request,'professor_mensagens.html')
 
 def responsavel(request):
     return render(request, 'responsavel.html')

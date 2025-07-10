@@ -1,0 +1,56 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Metas das Turmas - Avança+</title>
+  <link rel="stylesheet" href="{% static 'professor.css' %}">
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="logo">Avança+</div>
+      <ul class="menu">
+        <li><a href="{% url 'painel_professor' %}">Painel</a></li>
+        <li><a href="#">Turmas</a></li>
+        <li><a href="{% url 'professor_relatorios' %}">Relatórios</a></li>
+        <li><a href="{% url 'professor_mensagens' %}">Mensagens</a></li>
+      </ul>
+    </aside>
+
+    <main class="main-content">
+      <div class="top-bar">
+      </div>
+
+      <section class="metas">
+        <h2>Metas das Turmas</h2>
+
+        <div class="cards">
+          <div class="card">
+            <p class="label">1º A - Matemática</p>
+            <p class="valor">Frequência Média: 92%</p>
+          </div>
+
+          <div class="card">
+            <p class="label">2º B - Matemática</p>
+            <p class="valor">Nota Média: 64%</p>
+          </div>
+
+          <div class="card">
+            <p class="label">3º C - Matemática</p>
+            <p class="valor">Participação: Boa</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="info-extra">
+        <p>Total de alunos sob sua responsabilidade: <strong>85</strong></p>
+        <p>Turmas com atenção necessária: <strong>2</strong></p>
+        <p>Última atualização: <strong>09/07/2025</strong></p>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

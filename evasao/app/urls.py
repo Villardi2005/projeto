@@ -15,8 +15,11 @@ urlpatterns = [
     # path('redireciona/', views.redireciona_usuario, name='redireciona_usuario'),
     # path('logout/', auth_views.LogoutView.as_view(next_page='index'), name='logout'),
     #path('painel-responsavel/', views.painel_responsavel, name='painel_responsavel'),
-    #path('painel-professor/', views.painel_professor, name='painel_professor'),
+    path('painel-professor/', views.painel_professor, name='painel_professor'),
     path('metas', views.metas, name='metas'),
+    path('professor_turmas',views.professor_turmas, name='professor_turmas'),
+    path('professor_relatorios',views.professor_relatorios, name='professor_relatorios'),
+    path('professor_mensagens',views.professor_mensagens, name='professor_mensagens'),
     # path('admin/', admin.site.urls),
     # #path("__reload__/", include("django_browser_reload.urls")),
 ]

@@ -1,0 +1,107 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Relatórios - Avança+</title>
+  <link rel="stylesheet" href="{% static 'professor.css' %}" />
+</head>
+<body>
+  <div class="container">
+    <aside class="sidebar">
+      <div class="logo">Avança+</div>
+      <ul class="menu">
+        <li><a href="{% url 'painel_professor' %}">Painel</a></li>
+        <li><a href="{% url 'professor_turmas' %}">Turmas</a></li>
+        <li class="active"><a href="{% url 'professor_relatorios' %}">Relatórios</a></li>
+        <li><a href="{% url 'professor_mensagens' %}">Mensagens</a></li>
+      </ul>
+    </aside>
+
+    <main class="main-content">
+      <div class="top-bar">
+        <p>Relatórios das suas turmas</p>
+        <button class="btn-sair">Sair</button>
+      </div>
+
+      <section class="relatorios">
+        <h2>Resumo das Turmas</h2>
+
+        <div class="cards">
+          <div class="card">
+            <h3>1º A - Matemática</h3>
+            <p><strong>Nota Média:</strong> 78%</p>
+            <p><strong>Frequência Média:</strong> 90%</p>
+          </div>
+
+          <div class="card">
+            <h3>2º B - Matemática</h3>
+            <p><strong>Nota Média:</strong> 64%</p>
+            <p><strong>Frequência Média:</strong> 82%</p>
+          </div>
+
+          <div class="card">
+            <h3>3º C - Matemática</h3>
+            <p><strong>Nota Média:</strong> 72%</p>
+            <p><strong>Frequência Média:</strong> 87%</p>
+          </div>
+        </div>
+
+        <h2 style="margin-top: 40px;">Relatório Detalhado</h2>
+        <div class="relatorio-completo">
+          <table>
+            <thead>
+              <tr>
+                <th>Turma</th>
+                <th>Aluno</th>
+                <th>Acessos</th>
+                <th>Exercícios Concluídos</th>
+                <th>Desempenho</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1º A</td>
+                <td>Ana Souza</td>
+                <td>12</td>
+                <td>24</td>
+                <td>85%</td>
+              </tr>
+              <tr>
+                <td>1º A</td>
+                <td>Lucas Pereira</td>
+                <td>10</td>
+                <td>21</td>
+                <td>74%</td>
+              </tr>
+              <tr>
+                <td>2º B</td>
+                <td>Carlos Lima</td>
+                <td>8</td>
+                <td>18</td>
+                <td>72%</td>
+              </tr>
+              <tr>
+                <td>3º C</td>
+                <td>Bruna Dias</td>
+                <td>15</td>
+                <td>30</td>
+                <td>91%</td>
+              </tr>
+              <tr>
+                <td>3º C</td>
+                <td>Gabriel Silva</td>
+                <td>14</td>
+                <td>27</td>
+                <td>83%</td>
+              </tr>
+            </tbody>
+          </table>
+
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,153 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mensagens - Avança+</title>
+  <link rel="stylesheet" href="{% static 'professor.css' %}" />
+</head>
+<body>
+  <div class="container">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="logo">Avança+</div>
+      <ul class="menu">
+        <li><a href="{% url 'painel_professor' %}">Painel</a></li>
+        <li><a href="{% url 'professor_turmas' %}">Turmas</a></li>
+        <li><a href="{% url 'professor_relatorios' %}">Relatórios</a></li>
+        <li class="active"><a href="{% url 'professor_mensagens' %}">Mensagens</a></li>
+      </ul>
+    </aside>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main class="main-content">
+      <div class="mensagens-layout">
+
+        <!-- COLUNA DE CONTATOS -->
+        <div class="lista-alunos">
+          <h3>Conversas</h3>
+          <ul>
+            <li class="aluno ativo" data-aluno="ana">Ana Souza</li>
+            <li class="aluno" data-aluno="carlos">Carlos Lima</li>
+            <li class="aluno" data-aluno="bruna">Bruna Dias</li>
+          </ul>
+        </div>
+
+        <!-- CONVERSAS -->
+        <!-- Ana Souza (visível por padrão) -->
+        <div class="conversa" data-aluno="ana">
+          <div class="cabecalho-conversa">
+            <h3>Ana Souza</h3>
+            <span>Matemática - 1º A</span>
+          </div>
+
+          <div class="historico">
+            <div class="mensagem aluno">
+              <p>Bom dia, professor! Preciso de ajuda com o exercício 5 da lista 3.</p>
+              <span>10:30</span>
+            </div>
+            <div class="mensagem aluno">
+              <p>Não estou entendendo como resolver a questão de geometria.</p>
+              <span>10:32</span>
+            </div>
+            <div class="mensagem professor">
+              <p>Bom dia, Ana! Qual parte específica você está com dúvida?</p>
+              <span>10:35</span>
+            </div>
+          </div>
+
+          <form class="form-envio" method="post">
+            {% csrf_token %}
+            <input type="text" name="mensagem" placeholder="Digite sua mensagem..." required />
+            <button type="submit">Enviar</button>
+          </form>
+        </div>
+
+        <!-- Carlos Lima (oculto inicialmente) -->
+        <div class="conversa" data-aluno="carlos" style="display:none;">
+          <div class="cabecalho-conversa">
+            <h3>Carlos Lima</h3>
+            <span>Matématica - 2º B</span>
+          </div>
+
+          <div class="historico">
+            <div class="mensagem aluno">
+              <p>Olá, professor. Pode me explicar a lei de Newton para quedas livres?</p>
+              <span>09:15</span>
+            </div>
+            <div class="mensagem professor">
+              <p>Oi Carlos! Claro, vamos revisar a fórmula e exemplos.</p>
+              <span>09:20</span>
+            </div>
+            <div class="mensagem aluno">
+              <p>Obrigado! Assim fica mais fácil entender.</p>
+              <span>09:22</span>
+            </div>
+          </div>
+
+          <form class="form-envio" method="post">
+            {% csrf_token %}
+            <input type="text" name="mensagem" placeholder="Digite sua mensagem..." required />
+            <button type="submit">Enviar</button>
+          </form>
+        </div>
+
+        <!-- Bruna Dias (oculto inicialmente) -->
+        <div class="conversa" data-aluno="bruna" style="display:none;">
+          <div class="cabecalho-conversa">
+            <h3>Bruna Dias</h3>
+            <span>Matématica - 3º C</span>
+          </div>
+
+          <div class="historico">
+            <div class="mensagem aluno">
+              <p>Professor, qual a diferença entre ligações iônicas e covalentes?</p>
+              <span>11:45</span>
+            </div>
+            <div class="mensagem professor">
+              <p>Oi Bruna! Ligações iônicas envolvem transferência de elétrons, já as covalentes compartilham elétrons.</p>
+              <span>11:50</span>
+            </div>
+            <div class="mensagem aluno">
+              <p>Entendi, obrigado pela explicação!</p>
+              <span>11:52</span>
+            </div>
+          </div>
+
+          <form class="form-envio" method="post">
+            {% csrf_token %}
+            <input type="text" name="mensagem" placeholder="Digite sua mensagem..." required />
+            <button type="submit">Enviar</button>
+          </form>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // JS simples para trocar as conversas ao clicar nos nomes da lista
+    const alunos = document.querySelectorAll('.lista-alunos li.aluno');
+    const conversas = document.querySelectorAll('.conversa');
+
+    alunos.forEach(aluno => {
+      aluno.addEventListener('click', () => {
+        // Remove ativo de todos
+        alunos.forEach(a => a.classList.remove('ativo'));
+        aluno.classList.add('ativo');
+
+        const nomeAluno = aluno.getAttribute('data-aluno');
+        // Mostrar só a conversa correspondente
+        conversas.forEach(c => {
+          if(c.getAttribute('data-aluno') === nomeAluno) {
+            c.style.display = 'flex';
+          } else {
+            c.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
