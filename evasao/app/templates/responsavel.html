@@ -1,21 +1,22 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Painel do Responsável</title>
-  <link rel="stylesheet" href="responsavel.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Painel do Responsável - Avança+</title>
+  <link rel="stylesheet" href="{% static 'responsavel.css' %}" />
 </head>
 <body>
   <div class="container">
     <aside class="sidebar">
       <div class="logo">Avança+</div>
       <nav>
-        <ul>
-          <li>Acompanhar Filho</li>
-          <li>Metas e Resultados</li>
-          <li>Pagamentos</li>
-          <li>Notificações</li>
+        <ul class="menu">
+          <li><a href="#">Acompanhar Filho</a></li>
+          <li><a href="#">Metas e Resultados</a></li>
+          <li><a href="#">Pagamentos</a></li>
+          <li><a href="#">Notificações</a></li>
         </ul>
       </nav>
     </aside>
@@ -25,37 +26,36 @@
         <h1>PAINEL DO RESPONSÁVEL</h1>
       </header>
 
-      <section class="card">
-        <div class="card-header">
-          <img src="grafico.png" alt="Gráfico" class="grafico-img">
-          <div>
-            <strong>FREQUÊNCIA NO BIMESTRE</strong><br>
-            <span>72%</span><br>
-            MÉDIA NAS NOTAS 6,8
+      <section class="cards">
+        <article class="card">
+          <div class="card-header">
+            <div class="info-frequencia">
+              <strong>FREQUÊNCIA NO BIMESTRE</strong>
+              <strong>aluno com baixa frequência!</strong>
+              <span class="percentual">72%</span>
+            </div>
           </div>
-          <button class="btn">VER DETALHES</button>
-        </div>
-      </section>
+        </article>
 
-      <section class="card">
-        <strong>RECOMPENSAS</strong><br>
-        <span>Saldo acumulado liberado</span><br>
-        <h2>R$ 400,00</h2>
-        <button class="btn">USAR CRÉDITO EM PARCEIROS</button>
-      </section>
+        <article class="card">
+          <strong>RECOMPENSAS</strong>
+          <span>Saldo acumulado liberado</span>
+          <h2>R$ 400,00</h2>
+        </article>
 
-      <section class="card">
-        <strong>DIRETORIA</strong><br>
-        Última visita:<br>
-        Advertência, pois professor de geografia o tirou de sala.<br>
-        <strong>08/05/2025</strong>
-      </section>
+        <article class="card">
+          <strong>DIRETORIA</strong>
+          <p>Última visita:</p>
+          <p>Advertência, pois professor de geografia o tirou de sala.</p>
+          <strong>08/05/2025</strong>
+        </article>
 
-      <section class="card">
-        <strong>ENFERMARIA</strong><br>
-        Última visita:<br>
-        Dor de Cabeça<br>
-        <strong>12/04/2025</strong>
+        <article class="card">
+          <strong>ENFERMARIA</strong>
+          <p>Última visita:</p>
+          <p>Dor de Cabeça</p>
+          <strong>12/04/2025</strong>
+        </article>
       </section>
     </main>
   </div>

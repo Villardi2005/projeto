@@ -36,7 +36,7 @@ def professor_relatorios(request):
 def professor_mensagens(request):
     return render(request,'professor_mensagens.html')
 
-def responsavel(request):
+def painel_responsavel(request):
     return render(request, 'responsavel.html')
 
 def login_view(request):

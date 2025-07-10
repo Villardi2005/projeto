@@ -1,79 +1,172 @@
-body {
+/* Reset básico */
+* {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f5f5f5;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Container principal */
 .container {
   display: flex;
   height: 100vh;
+  background-color: #4c6a43; /* verde escuro da imagem */
+  color: #f0f0f0;
 }
 
+/* Sidebar lateral */
 .sidebar {
+  background-color: #2f4530; /* verde ainda mais escuro */
   width: 220px;
-  background-color: #2f5d34;
-  padding: 20px;
-  color: white;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
 .logo {
-  font-weight: bold;
-  font-size: 22px;
-  margin-bottom: 30px;
+  font-weight: 700;
+  font-size: 28px;
+  color: #dbb45a; /* dourado */
+  margin-bottom: 20px;
+  user-select: none;
 }
 
-.sidebar ul {
+.menu {
   list-style: none;
-  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.sidebar li {
-  margin: 20px 0;
+.menu li a {
+  color: #f0f0f0;
+  text-decoration: none;
+  font-weight: 600;
   font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
+  transition: color 0.3s ease;
 }
 
+.menu li a:hover {
+  color: #dbb45a;
+}
+
+/* Conteúdo principal */
 .conteudo {
-  flex: 1;
-  padding: 20px;
-  background-color: #e6e6e6;
+  flex-grow: 1;
+  padding: 30px 50px;
+  overflow-y: auto;
 }
 
-.cabecalho {
-  text-align: right;
-  font-weight: bold;
-  margin-bottom: 20px;
+/* Cabeçalho */
+.cabecalho h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #fff;
+  user-select: none;
 }
 
+/* Cards - área de conteúdo principal */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+/* Estilo base dos cards */
 .card {
-  background-color: #4d774e;
-  color: white;
-  padding: 20px;
+  background-color: #f0f0f0;
   border-radius: 10px;
-  margin-bottom: 20px;
-  position: relative;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 25px 30px;
+  color: #2f4530; /* texto verde escuro para contraste */
+  box-shadow: 0 2px 10px rgb(0 0 0 / 0.15);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
+/* Card header especifico */
 .card-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 15px;
 }
 
-.grafico-img {
-  width: 70px;
-  height: auto;
-  margin-right: 20px;
+.info-frequencia strong {
+  font-weight: 700;
+  font-size: 14px;
+  color: #4f653a;
+  margin-bottom: 8px;
+  display: block;
+  user-select: none;
 }
 
+.percentual {
+  font-weight: 700;
+  font-size: 30px;
+  color: #233214;
+  user-select: none;
+}
+
+.media-notas {
+  font-size: 12px;
+  color: #4f653a;
+  user-select: none;
+}
+
+/* Botão padrão */
 .btn {
-  background-color: #6d73ff;
+  background-color: #2c54ff; /* azul */
   color: white;
   border: none;
-  padding: 8px 14px;
-  border-radius: 6px;
+  padding: 12px 20px;
+  font-weight: 700;
+  border-radius: 8px;
   cursor: pointer;
-  font-weight: bold;
+  transition: background-color 0.3s ease;
+  margin-top: 15px;
+  user-select: none;
+}
+
+.btn:hover {
+  background-color: #2446cc;
+}
+
+/* Titulos dentro dos cards */
+.card > strong {
+  font-weight: 700;
+  font-size: 18px;
+  color: #4c6a43;
+  margin-bottom: 10px;
+  user-select: none;
+}
+
+/* Parágrafos para informações */
+.card p {
+  font-size: 14px;
+  color: #3c3c3c;
+  margin-bottom: 8px;
+  user-select: none;
+}
+
+/* Data */
+.card strong:last-child {
+  font-size: 14px;
+  color: #4c6a43;
+}
+
+/* Scroll se precisar na área principal */
+.conteudo::-webkit-scrollbar {
+  width: 8px;
+}
+
+.conteudo::-webkit-scrollbar-thumb {
+  background-color: #dbb45a;
+  border-radius: 10px;
+}
+
+.conteudo::-webkit-scrollbar-track {
+  background-color: #4c6a43;
 }

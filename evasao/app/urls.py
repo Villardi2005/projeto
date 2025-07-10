@@ -14,7 +14,7 @@ urlpatterns = [
     path('login', views.login, name='login'),
     # path('redireciona/', views.redireciona_usuario, name='redireciona_usuario'),
     # path('logout/', auth_views.LogoutView.as_view(next_page='index'), name='logout'),
-    #path('painel-responsavel/', views.painel_responsavel, name='painel_responsavel'),
+    path('painel-responsavel/', views.painel_responsavel, name='painel_responsavel'),
     path('painel-professor/', views.painel_professor, name='painel_professor'),
     path('metas', views.metas, name='metas'),
     path('professor_turmas',views.professor_turmas, name='professor_turmas'),
